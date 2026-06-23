@@ -3,14 +3,7 @@ pluginManagement {
 
     plugins {
         kotlin("jvm") version kotlinVersion
-        id("com.gradleup.shadow") version "9.0.0-beta12"
-    }
-}
-
-dependencyResolutionManagement {
-    repositories {
-        mavenCentral()
-        maven("https://jitpack.io")
+        id("com.gradleup.shadow") version "9.4.2"
     }
 }
 

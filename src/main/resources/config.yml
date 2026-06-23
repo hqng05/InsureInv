@@ -1,8 +1,6 @@
-# InsureInv Configuration
-
 storage:
   method: sqlite
-  
+
   mysql:
     host: localhost
     port: 3306
@@ -15,10 +13,10 @@ storage:
       connection-timeout: 30000
       idle-timeout: 600000
       max-lifetime: 1800000
-  
+
   sqlite:
     path: data.db
-  
+
   json:
     path: data.json
 
@@ -31,11 +29,6 @@ economy:
 messages:
   enable-prefix: false
   prefix: "<gradient:#00d4ff:#0099ff><bold>[ ɪɴѕᴜʀᴇɪɴᴠ ]</bold></gradient> <dark_gray>»</dark_gray> <white>"
-
-i18n:
-  default-language: vi_VN
-  preload-on-join: true
-  invalidate-on-quit: true
 
 metrics:
   enabled: true

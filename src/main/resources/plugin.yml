@@ -1,6 +1,6 @@
 name: '${name}'
 version: '${version}-${gitCommit}'
-main: dev.hqng.insureinv.InsureInv
+main: tech.qhuyy.insureinv.InsureInv
 api-version: '1.21'
 folia-supported: true
 authors: [ qhuyy ]

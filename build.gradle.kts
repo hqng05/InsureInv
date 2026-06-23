@@ -1,8 +1,8 @@
 import java.time.Instant
 
 plugins {
-    kotlin("jvm") version "2.3.10"
-    id("com.gradleup.shadow") version "9.3.1"
+    kotlin("jvm") version "2.3.21"
+    id("com.gradleup.shadow") version "9.4.2"
 }
 
 val generateGitProperties by tasks.registering {
@@ -69,20 +69,18 @@ val coroutinesVersion: String by project
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21.10-R0.1-SNAPSHOT")
     compileOnly("com.github.MilkBowl:VaultAPI:1.7.1")
-    compileOnly("me.clip:placeholderapi:2.11.6")
+    compileOnly("me.clip:placeholderapi:2.12.2")
     compileOnly("org.black_ixx:playerpoints:3.3.3")
     compileOnly("com.zaxxer:HikariCP:5.1.0")
     compileOnly("net.milkbowl.vault:VaultUnlockedAPI:2.16")
-    compileOnly("com.mysql:mysql-connector-j:8.3.0")
-    compileOnly("org.xerial:sqlite-jdbc:3.45.1.0")
+    compileOnly("com.mysql:mysql-connector-j:9.7.0")
+    compileOnly("org.xerial:sqlite-jdbc:3.53.2.0")
     compileOnly("com.google.code.gson:gson:2.10.1")
 
     compileOnly("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
 
     implementation("org.bstats:bstats-bukkit:3.1.0")
-    implementation("com.tcoded:FoliaLib:0.4.3")
-    implementation("com.github.hqng05.hqng-i18n:hqng-i18n-bukkit:1.0.2")
-    implementation("com.github.hqng05.hqng-i18n:hqng-i18n-core:1.0.2")
+    implementation("com.tcoded:FoliaLib:0.5.1")
 }
 
 kotlin {
@@ -111,16 +109,10 @@ tasks.shadowJar {
         include(dependency("com.tcoded:FoliaLib"))
         include(dependency("org.bstats:bstats-bukkit"))
         include(dependency("org.bstats:bstats-base"))
-        include(dependency("com.github.hqng05.hqng-i18n:hqng-i18n-bukkit"))
-        include(dependency("com.github.hqng05.hqng-i18n:hqng-i18n-core"))
     }
 
     relocate("com.tcoded.folialib", "dev.hqng.insureinv.libs.folialib")
     relocate("org.bstats", "dev.hqng.insureinv.libs.bstats")
-
-    relocate("dev.hqng.i18n", "dev.hqng.insureinv.libs.i18n") {
-        include("dev.hqng.i18n.**")
-    }
 
     exclude("META-INF/*.SF")
     exclude("META-INF/*.DSA")
